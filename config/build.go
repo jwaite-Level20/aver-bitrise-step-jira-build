@@ -8,6 +8,7 @@ import (
 type Build struct {
 	Version string
 	Number  string
+	Scheme string
 }
 
 func (build *Build) String() string {

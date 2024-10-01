@@ -54,6 +54,12 @@ inputs:
         If you develop an iOS project, you can extract the version number from Info.plist of the main target. It’s called `CFBundleShortVersionString`. 
         Alternatively, you may use a custom step that can do it for you: [bitrise-step-xcode-build-version](https://github.com/nodes-ios/bitrise-step-xcode-build-version)
       is_required: true
+  - scheme:
+    opts:
+      title: "Scheme"
+      summary: "Environment Scheme"
+      description: "Environment Scheme used in Bitrise build"
+      is_required: true
   - jira_host:
     opts:
       title: "JIRA host"
