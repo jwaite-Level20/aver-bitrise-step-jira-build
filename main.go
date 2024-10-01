@@ -15,6 +15,8 @@ type StepConfig struct {
 	// Generar info
 	AppVersion string `env:"app_version,required"`
 
+	Scheme string `env:"scheme,required"`
+
 	// JIRA
 	JiraHost         string          `env:"jira_host,required"`
 	JiraUsername     string          `env:"jira_username,required"`
