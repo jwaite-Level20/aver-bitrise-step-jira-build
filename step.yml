@@ -8,9 +8,9 @@
 # - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
 
 title: |-
-  Update JIRA issues with build number
+  Aver - Update JIRA issues with build number
 summary: |-
-  Update fields of JIRA issues with build number.
+  Aver - Update fields of JIRA issues with build number.
 description: |-
   Update fields of JIRA issues associated with current MR/PR, with the current build number.
 
