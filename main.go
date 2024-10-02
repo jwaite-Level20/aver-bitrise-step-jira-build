@@ -58,7 +58,7 @@ func main() {
 	build := config.Build{
 		Version: stepConfig.AppVersion,
 		Number:  stepConfig.BuildNumber,
-		Scheme: stepConfig.Scheme,
+		Scheme:  stepConfig.Scheme,
 	}
 
 	// get commit hashes from bitrise if needed

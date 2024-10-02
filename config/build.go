@@ -8,7 +8,7 @@ import (
 type Build struct {
 	Version string
 	Number  string
-	Scheme string
+	Scheme  string
 }
 
 func (build *Build) String() string {
@@ -18,7 +18,7 @@ func (build *Build) String() string {
 func ParseBuild(s string) (*Build, error) {
 	components := strings.Split(s, " ")
 	if len(components) != 2 {
-		return nil, fmt.Errorf("Provided string does not have required components")
+		return nil, fmt.Errorf("provided string does not have required components")
 	}
 
 	version := components[0]
