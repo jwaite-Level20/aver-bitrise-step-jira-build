@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"os/exec"
 
 	"github.com/Holdapp/bitrise-step-jira-build/bitrise"
 	"github.com/Holdapp/bitrise-step-jira-build/config"
@@ -69,6 +70,7 @@ func main() {
 	exporter := export.NewExporter(command.NewFactory(envRepository))
 
 	exporter.ExportOutput("PENDING_TICKETS", "Test")
+	exec.Command("bitrise", "envman", "add", "--key", "JIRA_TICKETS_PENDING_QA", "--value", "Test").CombinedOutput()
 
 	// get commit hashes from bitrise if needed
 	var hashes []string
