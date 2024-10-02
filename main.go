@@ -71,9 +71,10 @@ func main() {
 	exporter := export.NewExporter(command.NewFactory(envRepository))
 
 	exporter.ExportOutput("PENDING_TICKETS", "Test")
-	cmdLog, err_envman := exec.Command("bitrise", "envman", "add", "--key", "$JIRA_TICKETS_PENDING_QA", "--value", "Test").CombinedOutput()
+	c := exec.Command("bitrise", "envman", "add", "--key", "JIRA_TICKETS_PENDING_QA", "--value", "Test")
+	err_envman := c.Run()
 	if err_envman != nil {
-		fmt.Printf("Failed to expose output with envman, error: %#v | output: %s", err_envman, cmdLog)
+		fmt.Printf("Failed to expose output with envman, error: %#v", err_envman)
 	}
 
 	// get commit hashes from bitrise if needed
