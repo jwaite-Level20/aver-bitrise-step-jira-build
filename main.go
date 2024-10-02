@@ -9,6 +9,10 @@ import (
 	logger "github.com/bitrise-io/go-utils/log"
 
 	"github.com/bitrise-io/go-steputils/stepconf"
+	"github.com/bitrise-io/go-steputils/v2/export"
+	"github.com/bitrise-io/go-steputils/v2/stepenv"
+	"github.com/bitrise-io/go-utils/v2/command"
+	"github.com/bitrise-io/go-utils/v2/env"
 )
 
 type StepConfig struct {
@@ -60,6 +64,11 @@ func main() {
 		Number:  stepConfig.BuildNumber,
 		Scheme:  stepConfig.Scheme,
 	}
+
+	envRepository := stepenv.NewRepository(env.NewRepository())
+	exporter := export.NewExporter(command.NewFactory(envRepository))
+
+	exporter.ExportOutput("PENDING_TICKETS", "Test")
 
 	// get commit hashes from bitrise if needed
 	var hashes []string
