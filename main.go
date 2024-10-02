@@ -71,7 +71,7 @@ func main() {
 	exporter := export.NewExporter(command.NewFactory(envRepository))
 
 	exporter.ExportOutput("PENDING_TICKETS", "Test")
-	cmdLog, err_envman := exec.Command("bitrise", "envman", "add", "--key", "JIRA_TICKETS_PENDING_QA", "--value", "Test").CombinedOutput()
+	cmdLog, err_envman := exec.Command("bitrise", "envman", "add", "--key", "$JIRA_TICKETS_PENDING_QA", "--value", "Test").CombinedOutput()
 	if err_envman != nil {
 		fmt.Printf("Failed to expose output with envman, error: %#v | output: %s", err_envman, cmdLog)
 	}
