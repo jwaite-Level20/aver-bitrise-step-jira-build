@@ -106,3 +106,7 @@ inputs:
       - "false"
 
 outputs:
+  - pending_tickets:
+    opts:
+      title: "Pending Jira Tickets"
+      summary: "Pending Jira tickets from previous Dev builds that have yet to be included in a QA build."
