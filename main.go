@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 
@@ -74,7 +73,9 @@ func main() {
 	c := exec.Command("bitrise", "envman", "add", "--key", "JIRA_TICKETS_PENDING_QA", "--value", "Test")
 	err_envman := c.Run()
 	if err_envman != nil {
-		fmt.Printf("Failed to expose output with envman, error: %#v", err_envman)
+		logger.Infof("Failed to expose output with envman, error: %#v", err_envman)
+	} else {
+		logger.Infof("ENV Variable written.")
 	}
 
 	// get commit hashes from bitrise if needed
